@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Javascript Quiz</h1>
+                <h4 id="lastUserScore"></h4>
+                <button id="start">Start</button>
+                <h4 class="timer"></h4>
+                <div id="quiz">
+                    <h3 class="ask">What is a string data type?</h3>
+                    <form>
+                        <input type="radio" id="option-a" name="radio-options" value="number">
+                        <label for="option-0" id="option-0">number</label><br>
+                        <input type="radio" id="option-b" name="radio-options" value="text">
+                        <label for="option-1" id="option-1">text</label><br>
+                        <input type="radio" id="option-c" name="radio-options" value="true">
+                        <label for="option-2" id="option-2">true</label><br>   
+                        <input type="radio" id="option-d" name="radio-options" value="false">
+                        <label for="option-3" id="option-3">false</label><br>
+                      </form>
+                      <button id="next">Next Question</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
