@@ -13,7 +13,6 @@ var timerInterval;
 
 function lastUserScore () {
     var userScore = localStorage.getItem("user")
-    // console.log("user")
     lastScore.textContent="The last user scored: " + userScore;
 }
 lastUserScore ();
@@ -51,22 +50,10 @@ var questions=[
     }
     
 ]
-//looking through first arrays with the questions and options
+
 for (i=0; i<questions.length; i++) {
-    //this is each object in our questions array
-    // console.log(questions[i])
-    //this is the question for each object in our array
-    // console.log(questions[i].q)
-    //this is the array of answers for each object
-    // console.log(questions[i].options)
-
-    //how we print out options
     for (j=0; j<questions[i].options.length; j++) {
-        //console.log(questions[i].options[j])
     }
-
-    //printing out answers
-    //console.log(questions[i].a)
 }
 
 mainQuiz.style.display="none";
@@ -75,16 +62,12 @@ start.addEventListener("click",function () {
     mainQuiz.style.display = "block";
     start.style.display="none";
 
-    // startTime ()
-    //print questions and options to screen
     askQuestion.textContent=questions[index].q
     for (i=0; i<questions[index].options.length; i++) {
         var option = document.getElementById("option-" + i)
-        //console.log(option);
-        //console.log(questions[index].options[i]);
         option.textContent=questions[index].options[i];
     }
-    index+=1 //take what number you give to the right and add it to the left  
+    index+=1
 
     timerInterval = setInterval(function () {
         secondsLeft--;
@@ -97,13 +80,10 @@ start.addEventListener("click",function () {
 })
 
 next.addEventListener("click",function () {
-    //show that it's taking the user's answers everytime 'next question' is clicked
     var ele = document.getElementsByName('radio-options');
     for(i = 0; i < ele.length; i++) { 
         if (ele[i].checked) {
             console.log(ele[i])
-            // console.log(arrAnswers) -> selected answers by user
-            console.log(ele[i].value, questions[index-1].a)
             if (ele[i].value === questions[index-1].a) {
                 score+=1;
                 console.log(score)
@@ -113,7 +93,6 @@ next.addEventListener("click",function () {
             }
         }
     }
-    //stopping the quiz when questions are over
     if (index===questions.length-1) {
         alert("No more questions. Quiz ended. You scored: " + score + "/4");
         localStorage.setItem("user", score)
@@ -138,8 +117,6 @@ next.addEventListener("click",function () {
         if(i === 3) {
             var radioOption=document.getElementById("option-d")
         }
-
-        // console.log(questions[index].options[i]);
         option.textContent=questions[index].options[i];
         radioOption.removeAttribute("value")
         radioOption.setAttribute("value", questions[index].options[i]);
